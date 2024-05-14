@@ -1,0 +1,28 @@
+
+
+<div class="container pt-4">
+
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item " (click)="navigateToHome()"><a class="link-opacity-100-hover pointer">Home</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Cars</li>
+        </ol>
+      </nav>
+</div>
+<section class="container-lg sec-2 mt-4">
+    <div class="d-flex justify-content-center m-4">
+      <button class="popular-rental-deals-btn rounded-2">
+        POPULAR RENTAL DEALS
+      </button>
+    </div>
+  
+    <h1 class="text-center m-4">Most popular cars rental deals</h1>
+    <div class="d-flex flex-wrap justify-content-center">
+      <app-car-card *ngFor="let item of carsPerPage" [carCard]="item"></app-car-card>
+    </div>
+  
+    <app-pagination [items]="allCars" (onPageChange)="displayItemAsperPagination($event)">
+
+    </app-pagination>
+  </section>
+

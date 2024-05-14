@@ -1,0 +1,51 @@
+.sec-5 {
+    background-image: url("../../../../assets/imges/landing-page/sec-5/Vector.png");
+    background-position-x: left;
+    background-position-y: center;
+    background-size: 55%;
+    background-repeat: no-repeat;
+}
+.sec-5 > div:nth-child(1) img {
+  max-width: 80%;
+  animation-duration: 2s;
+  animation-name: img;
+}
+
+.sec-5 > div:nth-child(2) {
+  max-width: 40%;
+}
+
+
+
+/* ----- */
+
+  
+  @keyframes img {
+    from {
+        display: none;
+      max-width: 40%;
+    }
+  
+    to {
+        display: inline;
+      /* margin-left: 0%; */
+      max-width: 80%;
+    }
+  }
+
+@media only screen and (max-width: 768px) {
+  
+    .sec-5 {
+
+      padding: 0px!important;
+      margin-right: 10px;
+    }
+  
+    .sec-5 h4 {
+        font-size: 16px;
+    }
+    .sec-5 > div:nth-child(1)  {
+     width: 75%!important;
+      }
+  
+  }

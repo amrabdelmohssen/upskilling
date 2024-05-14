@@ -1,0 +1,57 @@
+<div class="card shadow m-3">
+  <div class="d-flex justify-content-center m-4">
+    <img
+      class="card-img-top"
+      [src]="carCard.image"
+      alt="Card image cap"
+    />
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">{{carCard.make +' '+carCard.model}}</h5>
+    <div class="d-flex align-items-baseline">
+      <img src="../../assets/imges/card/star.png" />
+      <h6 class="mx-1">{{carCard.review}}</h6>      
+      <small class="text-muted">({{carCard.reviewCount}}   reviews)</small>
+    </div>
+    <div class="d-flex flex-column">
+      <div class="d-flex justify-content-between">
+        <p class="card-text text-nowrap d-flex align-items-start">
+          <img src="../../assets/imges/card/user.png" alt="" />
+          <small class="text-muted"> {{carCard.passangersNumber}} Passanger</small>
+        </p>
+
+        <p class="card-text text-nowrap d-flex align-items-start me-3">
+          <img src="../../assets/imges/card/Frame.png" alt="" />
+          <small class="text-muted"> {{carCard.transmission}} </small>
+        </p>
+      </div>
+
+      <div class="d-flex justify-content-between">
+        <p class="card-text text-nowrap d-flex align-items-start">
+          <img src="../../assets/imges/card/d8wxke_2_.png" alt="" />
+          <ng-container>
+            <small class="text-muted" > {{ carCard.isAirConditioning  ? 'Air conditioning ': '-'}}</small>
+          </ng-container>
+
+        </p>
+
+        <p class="card-text text-nowrap d-flex align-items-start">
+            <img src="../../assets/imges/card/doors.png" alt="" />
+            <small class="text-muted"> {{carCard.doorsNumber}} Doors</small>
+          </p>
+      </div>
+    </div>
+    <hr />
+    <div class="d-flex justify-content-between">
+      <p class="text-muted">Price</p>
+      <div class="d-flex">
+        <h6>${{carCard.price}}</h6>
+        /
+        <p class="text-muted">day</p>
+      </div>
+    </div>
+    <div>
+      <button type="button" class="btn btn-primary w-100" (click)="navigateToCarDetails(carCard.id)">View details<img class="ms-2" src="../../assets/imges/card/arrow-right.png"/></button>
+    </div>
+  </div>
+</div>

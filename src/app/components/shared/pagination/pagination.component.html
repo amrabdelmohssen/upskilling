@@ -1,0 +1,11 @@
+
+<section class="d-flex justify-content-center my-5">
+
+    <nav aria-label="Page navigation example">
+        <ul class="pagination">
+            <li class="page-item"><a class="page-link"  (click)="naviagteToAnotherPage(PaginationNavigationType.pervious)" [class]="currentPage === 1 ? 'disabled': '' ">Previous</a></li>
+            <li class="page-item" *ngFor="let item of pageNumberArr , let i = index"><a class="page-link" [class]="currentPage === i +1 ?'active' : ''" (click)="naviagteToAnotherPage(i + 1)">{{i + 1}}</a></li>
+            <li class="page-item"><a class="page-link" (click)="naviagteToAnotherPage(PaginationNavigationType.next)" [class]="currentPage === pagesCount ? 'disabled' : ''" >Next</a></li>
+        </ul>
+    </nav>
+</section>

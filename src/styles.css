@@ -1,0 +1,25 @@
+/* You can add global styles to this file, and also import other style files */
+@import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+
+:root {
+    --main-color: #0b5ed7;
+    --small-font : 12px;
+}
+
+.popular-rental-deals-btn {
+    background-color: #1572d31a;
+    color: var(--main-color);
+    border: 1px solid #1572d31a;
+    padding: 5px 20px;
+  }
+
+  .pointer {
+    cursor: pointer;
+  }
+
+  @media only screen and (max-width: 768px) { 
+    .popular-rental-deals-btn {
+      font-size: var(--small-font);
+      font-weight: bold;
+    }  
+  }
