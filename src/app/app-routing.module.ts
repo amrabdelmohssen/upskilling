@@ -3,7 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { LandingPageComponent } from './components/features/landing-page/landing-page.component';
 import { AllVehiclesComponent } from './components/features/all-vehicles/all-vehicles.component';
 import { CarDetailsComponent } from './components/features/car-details/car-details.component';
-import { NotFoundComponent } from './features/not-found/not-found.component';
+import { NotFoundComponent } from './components/features/not-found/not-found.component';
 
 
 const routes: Routes = [
