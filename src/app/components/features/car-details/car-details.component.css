@@ -11,9 +11,6 @@
   animation-name: img;
 }
 
-.sec-5 > div:nth-child(2) {
-  max-width: 40%;
-}
 
 
 
@@ -44,8 +41,6 @@
     .sec-5 h4 {
         font-size: 16px;
     }
-    .sec-5 > div:nth-child(1)  {
-     width: 75%!important;
-      }
+
   
   }

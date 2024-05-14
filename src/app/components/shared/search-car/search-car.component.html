@@ -1,0 +1,19 @@
+<div class="input-group flex-nowrap shadow mt-4 mb-3">
+    <span class="input-group-text" id="addon-wrapping">
+      <i class="fas fa-map-marker-alt"></i>
+    </span>
+
+    
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Search by name"
+      aria-label="Username"
+      aria-describedby="addon-wrapping"
+      [formControl]="searchCarBtn"
+      (keyup.enter)="getFilterCar()"
+    />
+    <button class="btn bold btn-primary" type="button" id="button-addon2" (click)="getFilterCar()" >
+      Search
+    </button>
+  </div>

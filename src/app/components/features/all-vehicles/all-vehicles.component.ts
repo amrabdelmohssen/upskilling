@@ -7,7 +7,7 @@ import { CarService } from 'src/app/services/car.service';
 @Component({
   selector: 'app-all-vehicles',
   templateUrl: './all-vehicles.component.html',
-  styleUrls: ['./all-vehicles.component.css']
+  styleUrls: ['./all-vehicles.component.css'],
 })
 export class AllVehiclesComponent {
   //test-test
@@ -39,10 +39,26 @@ export class AllVehiclesComponent {
   };
   allCars: CarCard[] = [];
   carsPerPage: CarCard[] = [];
+  filteredCars: CarCard[] = [];
 
   constructor(private carsService: CarService, private router: Router) {}
   ngOnInit(): void {
     this.getAllCars();
+  }
+
+  getFilterCar(searchValue: string): void {
+    if (searchValue) {
+      const searchCarBtnValue = searchValue.toLowerCase().trim();
+      this.filteredCars = this.allCars.filter((car) => {
+        debugger;
+        const name = `${car.make} ${car.model}`.toLowerCase();
+       return name.includes(searchCarBtnValue) || searchCarBtnValue.includes(name);
+      });
+      this.carsPerPage = [...this.filteredCars].slice(0, 12);
+    } else {
+      this.filteredCars = [...this.allCars];
+      this.carsPerPage = [...this.allCars].slice(0, 12);
+    }
   }
   getAllCars(): void {
     this.carsService
@@ -52,6 +68,7 @@ export class AllVehiclesComponent {
         tap((res) => {
           this.allCars = res;
           this.carsPerPage = this.allCars.slice(0, 12);
+          this.filteredCars = [...this.allCars];
         })
       )
       .subscribe();

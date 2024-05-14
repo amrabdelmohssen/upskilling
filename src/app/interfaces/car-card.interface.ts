@@ -21,6 +21,7 @@ export interface CarCard {
 }
 
 export enum SystemType {
-  Manual = 'manual',
-  Auto = 'auto',
+  Manual = 'Manual',
+  Auto = 'Automatic',
+  CVT= 'CVT'
 }

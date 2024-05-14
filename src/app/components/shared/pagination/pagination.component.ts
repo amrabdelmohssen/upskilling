@@ -16,10 +16,11 @@ export class PaginationComponent {
   @Output() onPageChange = new EventEmitter<CarCard[]>();
   allCars: CarCard[] = [];
   @Input() set items(value: CarCard[]) {
+    debugger
     if (value) {
-      
       this.allCars = value;
       this.pagesCount = Math.round(value.length / this.itemsCountPerPage);
+      this.pageNumberArr = []
       for (let index = 0; index < this.pagesCount; index++) {
         this.pageNumberArr.push(index);
       }

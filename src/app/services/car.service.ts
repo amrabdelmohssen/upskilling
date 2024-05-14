@@ -24,19 +24,17 @@ export class CarService {
           item = {
             ...item,
             review: 4.6,
-            price: 2100,
             isAirConditioning: true,
             doorsNumber: 4,
             passangersNumber: 2,
             reviewCount: 1345,
           };
-          if (index % 2) {
-            item.transmission = SystemType.Manual;
-            item.image =  '../../assets/imges/card/car1.png'
-
-          } else {
+          if (item.transmission  === 'Automatic' || item.transmission === 'CVT') {
             item.transmission = SystemType.Auto;
             item.image =  '../../assets/imges/card/car3.png'
+          } else {
+            item.transmission = SystemType.Manual;
+            item.image =  '../../assets/imges/card/car1.png'
 
           }
           return item;
@@ -52,18 +50,14 @@ export class CarService {
         item = {
           ...item,
           review: 4.6,
-          price: 2100,
           isAirConditioning: true,
-          doorsNumber: 4,
           passangersNumber: 2,
           reviewCount: 1345,
         }
         if (Number(item.id) % 2) {
-          item.transmission = SystemType.Manual;
           item.image =  '../../assets/imges/card/car1.png'
 
         } else {
-          item.transmission = SystemType.Auto;
           item.image =  '../../assets/imges/card/car3.png'
 
         }

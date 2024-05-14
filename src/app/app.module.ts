@@ -13,6 +13,8 @@ import { AllVehiclesComponent } from './components/features/all-vehicles/all-veh
 import { CarDetailsComponent } from './components/features/car-details/car-details.component';
 import { LandingPageComponent } from './components/features/landing-page/landing-page.component';
 import { NotFoundComponent } from './features/not-found/not-found.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { SearchCarComponent } from './components/shared/search-car/search-car.component';
 
 @NgModule({
   declarations: [
@@ -25,14 +27,17 @@ import { NotFoundComponent } from './features/not-found/not-found.component';
     AllVehiclesComponent,
     CarDetailsComponent,
     LandingPageComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    SearchCarComponent
 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FontAwesomeModule,
-    HttpClientModule 
+    HttpClientModule ,
+    ReactiveFormsModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

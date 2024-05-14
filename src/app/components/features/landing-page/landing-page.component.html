@@ -16,22 +16,26 @@
   <!-- start of section two -->
   
   <section class="container sec-2">
-    <div class="input-group flex-nowrap shadow mt-4 mb-3">
+    <!-- <div class="input-group flex-nowrap shadow mt-4 mb-3">
       <span class="input-group-text" id="addon-wrapping">
         <i class="fas fa-map-marker-alt"></i>
       </span>
   
+
       <input
         type="text"
         class="form-control"
         placeholder="Search by name"
         aria-label="Username"
         aria-describedby="addon-wrapping"
+        [formControl]="searchCarBtn"
+        (keyup.enter)="getFilterCar()"
       />
-      <button class="btn bold btn-primary" type="button" id="button-addon2">
+      <button class="btn bold btn-primary" type="button" id="button-addon2" (click)="getFilterCar()" >
         Search
       </button>
-    </div>
+    </div> -->
+    <app-search-car (onFilterCar)="getFilterCar($event)"></app-search-car>
     <div class="d-flex justify-content-center m-4">
       <button class="popular-rental-deals-btn rounded-2">
         POPULAR RENTAL DEALS
@@ -39,8 +43,8 @@
     </div>
   
     <h1 class="text-center m-4">Most popular cars rental deals</h1>
-    <div class="d-flex flex-wrap justify-content-center">
-      <app-car-card *ngFor="let item of cars" [carCard]="item"></app-car-card>
+    <div class="d-flex flex-wrap justify-content-center car-card-container">
+      <app-car-card *ngFor="let item of filteredCars" [carCard]="item"></app-car-card>
     </div>
     <div class="d-flex justify-content-center my-5">
       <button type="button" class="btn btn-outline-secondary px-5" (click)="navigateToAllVehiclesPage()">
@@ -256,24 +260,28 @@
           <img src="../../assets/imges/landing-page/ios.png" />
         </div>
     
-        <form class="d-flex flex-column col-md-7">
+        <form class="d-flex flex-column col-md-7" (ngSubmit)="postContactUs()" [formGroup]="contactUsForm">
           <input
             type="text"
             placeholder="Name"
             class="contact-us-input my-1 px-3"
+            formControlName="name"
           />
           <input
             type="text"
             placeholder="Phone Number"
             class="contact-us-input my-1 px-3"
+            formControlName="phone"
           />
           <input
             type="text"
             placeholder="Email"
             class="contact-us-input my-1 px-3"
+            formControlName="email"
+
           />
           <div class="d-flex justify-content-center my-2">
-            <button class="btn bold btn-primary px-5" type="button" id="button-addon2">
+            <button class="btn bold btn-primary px-5" type="submit" id="button-addon2">
               Send
             </button>
           </div>
@@ -284,5 +292,14 @@
       <img src="../../assets/imges/landing-page/sec-7/iPhone-14.png" class="mobile-img" alt="">
     </div>
   </section>
-  <app-footer></app-footer>
+
+
+<div class="d-flex justify-content-center contact-us-toast" *ngIf="successfulRes">
   
+    <div class="alert alert-success" role="alert">
+     {{successfulRes}} !
+    </div>
+
+</div>
+  <app-footer></app-footer>
+
