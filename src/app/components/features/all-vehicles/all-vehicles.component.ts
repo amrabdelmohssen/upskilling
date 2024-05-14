@@ -10,6 +10,7 @@ import { CarService } from 'src/app/services/car.service';
   styleUrls: ['./all-vehicles.component.css']
 })
 export class AllVehiclesComponent {
+  //test-test
   carCard: CarCard = {
     id: 1,
     model: 'Audi R8',
